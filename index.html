@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Intelligence Designed To Evolve</title>
+  <meta name="description" content="Build applications that reason, adapt and collaborate using a modular AI platform designed for production." />
+  <meta name="theme-color" content="#000000" />
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ================= HEADER (fixed) ================= -->
+  <header class="header">
+    <a href="#top" class="logo" aria-label="Home">
+      <img src="assets/logo.webp" alt="" width="52" height="52" />
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="nav-link is-active" data-nav="home" aria-current="page">Home</a>
+      <a href="#platform" class="nav-link" data-nav="product">Product</a>
+      <a href="#cases" class="nav-link" data-nav="cases">Case Studies</a>
+      <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+    </nav>
+
+    <a href="#pricing" class="sign-in">Sign in</a>
+
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="menu-overlay" hidden></div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+    <a href="#top" class="mobile-link is-active" data-nav="home">Home</a>
+    <a href="#platform" class="mobile-link" data-nav="product">Product</a>
+    <a href="#cases" class="mobile-link" data-nav="cases">Case Studies</a>
+    <a href="#contact" class="mobile-link" data-nav="contact">Contact</a>
+    <a href="#pricing" class="mobile-sign-in">Sign in</a>
+  </nav>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero-section" id="top" data-section="home">
+      <div class="bg" aria-hidden="true">
+        <video class="bg-video" autoplay muted loop playsinline>
+          <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="bg-fade"></div>
+      </div>
+
+      <div class="page">
+        <div class="header-space" aria-hidden="true"></div>
+
+        <div class="hero">
+          <div class="trust anim" style="--d: 0.05s">
+            <span class="trust-avatar a1"><span class="trust-inner"><i class="fa-brands fa-microsoft" aria-hidden="true"></i></span></span>
+            <span class="trust-avatar a2"><span class="trust-inner"><i class="fa-brands fa-amazon" aria-hidden="true"></i></span></span>
+            <span class="trust-avatar a3"><span class="trust-inner"><i class="fa-brands fa-google" aria-hidden="true"></i></span></span>
+            <span class="trust-pill">Trusted by 2000+ Enterprises</span>
+          </div>
+
+          <h1 class="headline anim">
+            <span class="line l1">Intelligence</span>
+            <span class="line l2">Designed To Evolve</span>
+          </h1>
+
+          <p class="subhead anim" style="--d: 0.28s">
+            Build applications that reason, adapt and collaborate using a modular
+            AI platform designed for production.
+          </p>
+
+          <a href="#pricing" class="cta anim" style="--d: 0.4s">Get Started</a>
+        </div>
+
+        <div class="stats" aria-label="Platform metrics">
+          <div class="stat anim" style="--d: 0.5s">
+            <span class="stat-icon" aria-hidden="true">&lt;</span>
+            <span class="stat-value" data-target="120" data-suffix="ms" data-decimals="0">0ms</span>
+            <span class="stat-label">Inference Time</span>
+          </div>
+          <div class="stat anim" style="--d: 0.58s">
+            <span class="stat-icon" aria-hidden="true">%</span>
+            <span class="stat-value" data-target="99.99" data-suffix="%" data-decimals="2">0.00%</span>
+            <span class="stat-label">Platform Uptime</span>
+          </div>
+          <div class="stat anim" style="--d: 0.66s">
+            <span class="stat-icon" aria-hidden="true">*</span>
+            <span class="stat-value" data-target="24" data-suffix="/7" data-decimals="0">0/7</span>
+            <span class="stat-label">Autonomous Runtime</span>
+          </div>
+          <div class="stat anim" style="--d: 0.74s">
+            <span class="stat-icon" aria-hidden="true">#</span>
+            <span class="stat-value" data-target="2.4" data-suffix="M" data-decimals="1">0.0M</span>
+            <span class="stat-label">Context Windows</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TICKER ================= -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>Reason</span><i>✦</i><span>Adapt</span><i>✦</i><span>Collaborate</span><i>✦</i><span>Remember</span><i>✦</i><span>Deploy</span><i>✦</i><span>Evolve</span><i>✦</i>
+        </div>
+        <div class="ticker-group">
+          <span>Reason</span><i>✦</i><span>Adapt</span><i>✦</i><span>Collaborate</span><i>✦</i><span>Remember</span><i>✦</i><span>Deploy</span><i>✦</i><span>Evolve</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= PLATFORM ================= -->
+    <section class="section" id="platform" data-section="product">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="dots"></i>Platform</span>
+          <h2 class="section-title">Five modules.<br />Infinite systems.</h2>
+          <p class="section-sub">Every capability is a typed, swappable module. Compose exactly the intelligence your product needs — and upgrade any piece without a rewrite.</p>
+        </div>
+
+        <div class="modules">
+          <ul class="module-list" role="tablist" aria-label="Platform modules">
+            <li><button class="module is-active" role="tab" aria-selected="true" data-module="reason">
+              <span class="module-glyph">&lt;</span>
+              <span class="module-text"><b>Reason</b><span>Multi-step planning with verifiable reasoning chains.</span></span>
+              <span class="module-bar"><i></i></span>
+            </button></li>
+            <li><button class="module" role="tab" aria-selected="false" data-module="memory">
+              <span class="module-glyph">#</span>
+              <span class="module-text"><b>Memory</b><span>Vector, graph and episodic memory across sessions.</span></span>
+              <span class="module-bar"><i></i></span>
+            </button></li>
+            <li><button class="module" role="tab" aria-selected="false" data-module="tools">
+              <span class="module-glyph">+</span>
+              <span class="module-text"><b>Tools</b><span>Typed calls to any API, database or internal service.</span></span>
+              <span class="module-bar"><i></i></span>
+            </button></li>
+            <li><button class="module" role="tab" aria-selected="false" data-module="agents">
+              <span class="module-glyph">*</span>
+              <span class="module-text"><b>Agents</b><span>Teams that delegate, debate and converge on answers.</span></span>
+              <span class="module-bar"><i></i></span>
+            </button></li>
+            <li><button class="module" role="tab" aria-selected="false" data-module="guardrails">
+              <span class="module-glyph">%</span>
+              <span class="module-text"><b>Guardrails</b><span>Policy, PII and safety checks on every input and output.</span></span>
+              <span class="module-bar"><i></i></span>
+            </button></li>
+          </ul>
+
+          <div class="console" role="tabpanel" aria-live="polite">
+            <div class="console-top">
+              <span class="win-dots"><i></i><i></i><i></i></span>
+              <span class="console-path">modules/<b class="console-name">reason</b></span>
+              <span class="console-live"><i></i>Live</span>
+            </div>
+            <canvas class="dotfield" data-pattern="reason" aria-hidden="true"></canvas>
+            <dl class="console-metrics">
+              <div><dt>Planning depth</dt><dd>12 steps</dd></div>
+              <div><dt>Accuracy</dt><dd>94.1%</dd></div>
+              <div><dt>Latency p95</dt><dd>120ms</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ARCHITECTURE ================= -->
+    <section class="section section--grid" id="architecture" data-section="product">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow"><i class="dots"></i>Architecture</span>
+          <h2 class="section-title">One runtime.<br />Every signal connected.</h2>
+          <p class="section-sub">Requests stream in from your product, the runtime routes each one through exactly the modules it needs, and answers stream back out in milliseconds.</p>
+        </div>
+
+        <div class="arch">
+          <svg class="arch-lines" aria-hidden="true"></svg>
+
+          <div class="arch-col arch-in">
+            <div class="node" data-from><span class="node-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="node-text"><b>Your app</b><small>Web, iOS, Android</small></span></div>
+            <div class="node" data-from><span class="node-icon"><i class="fa-solid fa-code"></i></span><span class="node-text"><b>SDK &amp; REST</b><small>Python, TypeScript</small></span></div>
+            <div class="node" data-from><span class="node-icon"><i class="fa-solid fa-bolt"></i></span><span class="node-text"><b>Events</b><small>Webhooks, queues</small></span></div>
+          </div>
+
+          <div class="arch-core">
+            <div class="core" data-core>
+              <svg class="core-rings" viewBox="0 0 200 200" aria-hidden="true">
+                <circle cx="100" cy="100" r="96" class="ring-a" />
+                <circle cx="100" cy="100" r="78" class="ring-b" />
+                <circle cx="100" cy="100" r="60" class="ring-c" />
+              </svg>
+              <span class="core-mark"><img src="assets/logo.webp" alt="" width="52" height="52" /></span>
+            </div>
+            <p class="core-label"><b>Evolve runtime</b><small>routing · state · observability</small></p>
+          </div>
+
+          <div class="arch-col arch-out">
+            <div class="node node--module" data-to><span class="node-glyph">&lt;</span><b>Reason</b></div>
+            <div class="node node--module" data-to><span class="node-glyph">#</span><b>Memory</b></div>
+            <div class="node node--module" data-to><span class="node-glyph">+</span><b>Tools</b></div>
+            <div class="node node--module" data-to><span class="node-glyph">*</span><b>Agents</b></div>
+            <div class="node node--module" data-to><span class="node-glyph">%</span><b>Guardrails</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section" id="how" data-section="product">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="dots"></i>How it works</span>
+          <h2 class="section-title">From idea to production<br />in three moves.</h2>
+        </div>
+
+        <div class="flow">
+          <ol class="steps" role="tablist" aria-label="Workflow steps">
+            <li><button class="step is-active" role="tab" aria-selected="true" data-step="0">
+              <span class="step-num">01</span>
+              <span class="step-body"><b>Compose</b><span>Snap together a model, memory, tools and guardrails in a few lines of code.</span></span>
+            </button></li>
+            <li><button class="step" role="tab" aria-selected="false" data-step="1">
+              <span class="step-num">02</span>
+              <span class="step-body"><b>Evaluate</b><span>Replay real traffic against every change. Ship only what scores better.</span></span>
+            </button></li>
+            <li><button class="step" role="tab" aria-selected="false" data-step="2">
+              <span class="step-num">03</span>
+              <span class="step-body"><b>Deploy</b><span>One command to a global, autoscaling runtime with canary rollouts.</span></span>
+            </button></li>
+          </ol>
+
+          <div class="code" role="tabpanel">
+            <div class="code-top">
+              <span class="win-dots"><i></i><i></i><i></i></span>
+              <span class="code-file">compose.py</span>
+              <button class="copy" type="button" aria-label="Copy code"><i class="fa-regular fa-copy" aria-hidden="true"></i><span>Copy</span></button>
+            </div>
+<pre class="code-body is-active" data-file="compose.py"><code><span class="k">from</span> evolve <span class="k">import</span> Agent, tools, memory
+
+agent = <span class="f">Agent</span>(
+    model=<span class="s">"evolve-reason-2"</span>,
+    memory=memory.<span class="f">vector</span>(<span class="s">"support-kb"</span>),
+    tools=[tools.http, tools.<span class="f">sql</span>(<span class="s">"orders"</span>)],
+    guardrails=[<span class="s">"pii"</span>, <span class="s">"policy:refunds"</span>],
+)
+
+reply = agent.<span class="f">run</span>(<span class="s">"Where is order #4182?"</span>)
+<span class="f">print</span>(reply.text)</code></pre>
+<pre class="code-body" data-file="evaluate.py"><code><span class="k">from</span> evolve <span class="k">import</span> evals
+
+report = evals.<span class="f">replay</span>(
+    agent,
+    dataset=<span class="s">"prod-traffic-7d"</span>,
+    metrics=[<span class="s">"accuracy"</span>, <span class="s">"latency_p95"</span>, <span class="s">"cost"</span>],
+)
+
+report.<span class="f">compare</span>(baseline=<span class="s">"v41"</span>)
+<span class="c"># accuracy  +4.2%   latency_p95  -38ms   cost  -12%</span></code></pre>
+<pre class="code-body" data-file="deploy.sh"><code><span class="c">$</span> evolve deploy support-agent --regions global
+
+<span class="ok">✓</span> Built support-agent@v42 in 3.1s
+<span class="ok">✓</span> Evaluated on 18,240 replays — 4.2% better
+<span class="ok">✓</span> Canary 5% → 100%, all checks passed
+<span class="ok">✓</span> Live at <span class="s">https://api.evolve.dev/agents/support</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GLOBAL RUNTIME ================= -->
+    <section class="section" id="global" data-section="product">
+      <div class="container global">
+        <div class="global-copy">
+          <span class="eyebrow"><i class="dots"></i>Global runtime</span>
+          <h2 class="section-title">Runs where<br />your users are.</h2>
+          <p class="section-sub">Agents deploy to 32 regions across three clouds, so every request is answered from the edge closest to the person asking.</p>
+
+          <dl class="global-stats">
+            <div><dt>Regions</dt><dd>32</dd></div>
+            <div><dt>Edge latency</dt><dd>&lt;50ms</dd></div>
+            <div><dt>Clouds</dt><dd>3</dd></div>
+          </dl>
+
+          <ul class="badges" aria-label="Compliance">
+            <li><i class="fa-solid fa-shield-halved"></i>SOC 2 Type II</li>
+            <li><i class="fa-solid fa-lock"></i>ISO 27001</li>
+            <li><i class="fa-solid fa-notes-medical"></i>HIPAA</li>
+            <li><i class="fa-solid fa-earth-europe"></i>GDPR</li>
+          </ul>
+        </div>
+
+        <div class="globe-wrap">
+          <canvas class="globe" aria-label="Rotating globe showing Evolve regions" role="img"></canvas>
+          <span class="globe-hint"><i class="fa-solid fa-hand-pointer"></i>Drag to rotate</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CASE STUDIES ================= -->
+    <section class="section" id="cases" data-section="cases">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="dots"></i>Case studies</span>
+          <h2 class="section-title">Teams shipping<br />intelligence today.</h2>
+        </div>
+
+        <div class="cases">
+          <article class="case">
+            <div class="case-brand">
+              <span class="ring"><span class="ring-inner"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></span></span>
+              <span><b>Northwind Logistics</b><small>Supply chain</small></span>
+            </div>
+            <div class="case-chart" data-values="7,8,7,8,8,7,6,5,4,3,3,2.5,2.4,2.2" data-split="6" aria-hidden="true"></div>
+            <p class="case-metric" data-target="68" data-suffix="%" data-decimals="0">0%</p>
+            <p class="case-metric-label">fewer delayed shipments</p>
+            <blockquote>“Our routing agents re-plan thousands of deliveries an hour. We went from prototype to production in five weeks.”</blockquote>
+            <p class="case-author">Dana Whitfield — VP Operations</p>
+          </article>
+
+          <article class="case">
+            <div class="case-brand">
+              <span class="ring"><span class="ring-inner"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span></span>
+              <span><b>Helio Health</b><small>Healthcare</small></span>
+            </div>
+            <div class="case-chart" data-values="1.6,1.8,1.7,1.9,1.8,2,3,4,4.6,5.2,5.8,6.4,7,7.6" data-split="6" aria-hidden="true"></div>
+            <p class="case-metric" data-target="4.1" data-suffix="×" data-decimals="1">0.0×</p>
+            <p class="case-metric-label">faster patient intake</p>
+            <blockquote>“Guardrails made the difference. PII never leaves our boundary, and every decision is auditable.”</blockquote>
+            <p class="case-author">Dr. Samir Okafor — Chief Medical Officer</p>
+          </article>
+
+          <article class="case">
+            <div class="case-brand">
+              <span class="ring"><span class="ring-inner"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span></span>
+              <span><b>Arcadia Finance</b><small>Financial services</small></span>
+            </div>
+            <div class="case-chart" data-values="2,2.2,2.1,2.4,2.3,2.5,3.2,3.8,4.4,5,5.6,6.2,6.9,7.6" data-split="6" aria-hidden="true"></div>
+            <p class="case-metric" data-target="2.3" data-suffix="M" data-decimals="1">0.0M</p>
+            <p class="case-metric-label">documents reviewed monthly</p>
+            <blockquote>“Replay evals let us upgrade models every month without a single regression reaching customers.”</blockquote>
+            <p class="case-author">Lena Marsh — Head of AI Platform</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section class="section" id="pricing" data-section="cases">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow"><i class="dots"></i>Pricing</span>
+          <h2 class="section-title">Start free.<br />Scale when it works.</h2>
+
+          <div class="billing" role="radiogroup" aria-label="Billing period">
+            <button class="billing-opt is-active" role="radio" aria-checked="true" data-billing="monthly">Monthly</button>
+            <button class="billing-opt" role="radio" aria-checked="false" data-billing="yearly">Yearly <em>−20%</em></button>
+          </div>
+        </div>
+
+        <div class="plans">
+          <article class="plan">
+            <h3 class="plan-name">Builder</h3>
+            <p class="plan-desc">For prototypes and side projects.</p>
+            <p class="plan-price"><span class="price" data-monthly="0" data-yearly="0">$0</span><small>/ month</small></p>
+            <a href="#contact" class="plan-btn">Start building</a>
+            <ul class="plan-list">
+              <li><i class="fa-solid fa-check"></i>All five modules</li>
+              <li><i class="fa-solid fa-check"></i>100k tokens / day</li>
+              <li><i class="fa-solid fa-check"></i>Community support</li>
+              <li><i class="fa-solid fa-check"></i>1 deployed agent</li>
+            </ul>
+          </article>
+
+          <article class="plan plan--featured">
+            <span class="plan-tag">Most popular</span>
+            <h3 class="plan-name">Scale</h3>
+            <p class="plan-desc">For products running in production.</p>
+            <p class="plan-price"><span class="price" data-monthly="249" data-yearly="199">$249</span><small>/ month</small></p>
+            <a href="#contact" class="plan-btn">Get Started</a>
+            <ul class="plan-list">
+              <li><i class="fa-solid fa-check"></i>Everything in Builder</li>
+              <li><i class="fa-solid fa-check"></i>Unlimited agents</li>
+              <li><i class="fa-solid fa-check"></i>Replay evals &amp; canary deploys</li>
+              <li><i class="fa-solid fa-check"></i>99.99% uptime SLA</li>
+              <li><i class="fa-solid fa-check"></i>Priority support</li>
+            </ul>
+          </article>
+
+          <article class="plan">
+            <h3 class="plan-name">Enterprise</h3>
+            <p class="plan-desc">For regulated, global organizations.</p>
+            <p class="plan-price"><span class="price price--text">Custom</span></p>
+            <a href="#contact" class="plan-btn">Talk to sales</a>
+            <ul class="plan-list">
+              <li><i class="fa-solid fa-check"></i>Everything in Scale</li>
+              <li><i class="fa-solid fa-check"></i>Private cloud or on-prem</li>
+              <li><i class="fa-solid fa-check"></i>SSO, SCIM &amp; audit exports</li>
+              <li><i class="fa-solid fa-check"></i>Dedicated solutions engineer</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section" id="faq" data-section="cases">
+      <div class="container faq-wrap">
+        <div class="section-head">
+          <span class="eyebrow"><i class="dots"></i>FAQ</span>
+          <h2 class="section-title">Questions,<br />answered.</h2>
+          <p class="section-sub">Can't find what you need? <a href="#contact" class="text-link">Talk to our team</a>.</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>Which models can I use?</span><i></i></button>
+            <div class="faq-a"><div><p>Our own reasoning models, or bring any major hosted or open-weight model. Modules are model-agnostic, so you can swap models without touching the rest of your system.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>Where does my data live?</span><i></i></button>
+            <div class="faq-a"><div><p>In the region you choose. Enterprise plans can run fully inside your own cloud account or on-prem, and we never train on your data.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>How do replay evaluations work?</span><i></i></button>
+            <div class="faq-a"><div><p>We record anonymized production traffic and re-run it against every new version of your agent, scoring accuracy, latency and cost before anything ships.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>Can I self-host?</span><i></i></button>
+            <div class="faq-a"><div><p>Yes. The Enterprise plan includes a self-hosted runtime with the same SDK, dashboards and eval tooling as our managed cloud.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>What happens if I exceed my limits?</span><i></i></button>
+            <div class="faq-a"><div><p>Nothing breaks. We'll notify you and bill overage at standard rates, or you can set hard caps per project.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT / FINAL CTA ================= -->
+    <section class="final" id="contact" data-section="contact">
+      <canvas class="dotfield dotfield--bg" data-pattern="ripple" aria-hidden="true"></canvas>
+      <div class="final-inner">
+        <span class="eyebrow"><i class="dots"></i>Get started</span>
+        <h2 class="final-title">Build what<br />comes next.</h2>
+        <p class="section-sub">Start free in minutes, or talk to us about running at enterprise scale.</p>
+        <div class="final-actions">
+          <a href="#pricing" class="cta">Get Started</a>
+          <a href="mailto:hello@evolve.dev" class="ghost-btn">Talk to sales</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#top" class="logo" aria-label="Home"><img src="assets/logo.webp" alt="" width="52" height="52" /></a>
+          <p>Intelligence designed to evolve.</p>
+          <span class="status"><i></i>All systems operational</span>
+        </div>
+        <nav class="footer-cols" aria-label="Footer">
+          <div><h4>Product</h4><a href="#platform">Platform</a><a href="#how">How it works</a><a href="#pricing">Pricing</a></div>
+          <div><h4>Company</h4><a href="#cases">Case studies</a><a href="#">Careers</a><a href="#contact">Contact</a></div>
+          <div><h4>Developers</h4><a href="#">Documentation</a><a href="#">API status</a><a href="#">Changelog</a></div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Evolve Labs, Inc.</span>
+        <div class="socials">
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" id="lenis-js" async></script>
+  <script src="main.js"></script>
+</body>
+</html>
