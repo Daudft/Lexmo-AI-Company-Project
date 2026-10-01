@@ -3,6 +3,42 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  const root = document.documentElement;
+  const capped = (promise, ms) => Promise.race([promise, new Promise((r) => setTimeout(r, ms))]);
+  const nextFrame = () => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  /* =========================================================
+     Hero intro
+     The hero sits on its first frame (CSS) until the display and UI
+     fonts are ready, then the whole sequence plays in one go. Capped
+     so a slow font CDN can never hold the page back.
+     ========================================================= */
+  const fontsReady = document.fonts
+    ? Promise.all([
+        document.fonts.load('400 64px "BubbledotICG-FinePos"'),
+        document.fonts.load('500 16px "Inter"'),
+        document.fonts.load('600 16px "Inter"'),
+      ]).catch(() => {})
+    : Promise.resolve();
+
+  // budget measured from navigation start: the intro begins by ~2.2s even on a slow font CDN
+  const heroReady = capped(fontsReady, Math.max(0, 2200 - performance.now())).then(nextFrame);
+  heroReady.then(() => {
+    root.classList.add("is-ready");
+    // release the compositor layers once the intro has finished
+    setTimeout(() => root.classList.add("intro-done"), 3000);
+  });
+
+  // the background video fades in on its own clock, as soon as it can actually play
+  const video = $(".bg-video");
+  const showVideo = () => root.classList.add("video-ready");
+  if (video.readyState >= 3) showVideo();
+  else {
+    video.addEventListener("canplay", showVideo, { once: true });
+    video.addEventListener("playing", showVideo, { once: true });
+  }
+  setTimeout(showVideo, 4000);
+  video.play?.().catch(() => {});
 
   /* =========================================================
      Mobile menu
@@ -278,7 +314,15 @@
     els.forEach((el) => io.observe(el));
   };
 
-  watchCounts($$(".stat-value"));
+  // hero stats count up as each one finishes appearing (matches the CSS --d delays)
+  heroReady.then(() => {
+    $$(".stat-value").forEach((el, i) => {
+      const target = parseFloat(el.dataset.target);
+      if (reduceMotion) return format(el, target);
+      const appear = parseFloat(el.closest(".stat").style.getPropertyValue("--d")) || 1.1;
+      setTimeout(() => tween(1600 + i * 80, (k) => format(el, target * k)), (appear + 0.25) * 1000);
+    });
+  });
   watchCounts($$(".case-metric"));
 
   /* =========================================================
@@ -450,8 +494,14 @@
     }
   }
 
-  const consoleField = new DotField($(".console .dotfield"), { spacing: 13, radius: 2.6, interactive: true });
-  new DotField($(".dotfield--bg"), { spacing: 18, radius: 2.2, base: 0.05 });
+  // created after the hero intro (see "Deferred graphics" below)
+  let consoleField = null;
+  const initDotFields = () => {
+    const canvas = $(".console .dotfield");
+    canvas.dataset.pattern = $(".module.is-active")?.dataset.module || "reason";
+    consoleField = new DotField(canvas, { spacing: 13, radius: 2.6, interactive: true });
+    new DotField($(".dotfield--bg"), { spacing: 18, radius: 2.2, base: 0.05 });
+  };
 
   /* =========================================================
      Platform module explorer
@@ -482,7 +532,7 @@
       bar.style.animation = "";
     });
     consoleName.textContent = key;
-    consoleField.setPattern(key);
+    consoleField?.setPattern(key);
 
     metrics.classList.add("is-swapping");
     setTimeout(() => {
@@ -599,7 +649,7 @@
   /* =========================================================
      Architecture: signals travel app → runtime → modules
      ========================================================= */
-  (() => {
+  const initArch = () => {
     const arch = $(".arch");
     const svg = $(".arch-lines");
     const core = $("[data-core]");
@@ -711,12 +761,12 @@
         cancelAnimationFrame(raf);
       }
     }).observe(arch);
-  })();
+  };
 
   /* =========================================================
      Dot-matrix globe
      ========================================================= */
-  (() => {
+  const initGlobe = () => {
     const canvas = $(".globe");
     const ctx = canvas.getContext("2d");
 
@@ -950,12 +1000,12 @@
         requestAnimationFrame(loop);
       } else if (!e.isIntersecting) running = false;
     }).observe(canvas);
-  })();
+  };
 
   /* =========================================================
      Case study dot charts
      ========================================================= */
-  $$(".case-chart").forEach((el) => {
+  const initCharts = () => $$(".case-chart").forEach((el) => {
     const values = el.dataset.values.split(",").map(Number);
     const split = Number(el.dataset.split);
     const rows = 7;
@@ -987,4 +1037,27 @@
     legend.innerHTML = "<span><i></i>Before</span><span><i></i>With Evolve</span>";
     el.after(legend);
   });
+
+  /* =========================================================
+     Deferred graphics
+     Canvas/SVG set-up (globe geometry, dot fields, diagram, charts)
+     waits until the hero intro has played so it never competes with it.
+     It starts early if the visitor scrolls first or lands mid-page.
+     ========================================================= */
+  let graphicsStarted = false;
+  const startGraphics = () => {
+    if (graphicsStarted) return;
+    graphicsStarted = true;
+    initCharts();
+    initDotFields();
+    initArch();
+    initGlobe();
+  };
+  const idle = (fn) => ("requestIdleCallback" in window ? requestIdleCallback(fn, { timeout: 1000 }) : setTimeout(fn, 200));
+
+  if (window.scrollY > window.innerHeight * 0.5) startGraphics();
+  else {
+    window.addEventListener("scroll", startGraphics, { once: true, passive: true });
+    heroReady.then(() => setTimeout(() => idle(startGraphics), 1800));
+  }
 })();

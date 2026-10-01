@@ -6,10 +6,19 @@
   <title>Intelligence Designed To Evolve</title>
   <meta name="description" content="Build applications that reason, adapt and collaborate using a modular AI platform designed for production." />
   <meta name="theme-color" content="#000000" />
-  <script>document.documentElement.classList.add("js");</script>
+  <!-- start the slow third-party font downloads at t=0, in parallel with the CSS -->
+  <link rel="preload" href="https://db.onlinewebfonts.com/t/8cb707a9b8a73f8a7403336b861c3074.woff" as="font" type="font/woff" crossorigin />
+  <script>
+    document.documentElement.classList.add("js");
+    // safety net: if main.js never runs, release the hero after 3s instead of leaving it on its first frame
+    setTimeout(function () { document.documentElement.classList.add("is-ready", "video-ready"); }, 3500);
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link
     href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos"
@@ -21,7 +30,10 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
+    media="print"
+    onload="this.media='all'"
   />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -59,7 +71,7 @@
     <!-- ================= HERO ================= -->
     <section class="hero-section" id="top" data-section="home">
       <div class="bg" aria-hidden="true">
-        <video class="bg-video" autoplay muted loop playsinline>
+        <video class="bg-video" autoplay muted loop playsinline preload="auto">
           <source
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4"
             type="video/mp4"
@@ -72,10 +84,10 @@
         <div class="header-space" aria-hidden="true"></div>
 
         <div class="hero">
-          <div class="trust anim" style="--d: 0.05s">
-            <span class="trust-avatar a1"><span class="trust-inner"><i class="fa-brands fa-microsoft" aria-hidden="true"></i></span></span>
-            <span class="trust-avatar a2"><span class="trust-inner"><i class="fa-brands fa-amazon" aria-hidden="true"></i></span></span>
-            <span class="trust-avatar a3"><span class="trust-inner"><i class="fa-brands fa-google" aria-hidden="true"></i></span></span>
+          <div class="trust anim" style="--d: 0.3s">
+            <span class="trust-avatar a1"><span class="trust-inner"><svg class="trust-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M0 32h214.6v214.6H0V32zm233.4 0H448v214.6H233.4V32zM0 265.4h214.6V480H0V265.4zm233.4 0H448V480H233.4V265.4z"/></svg></span></span>
+            <span class="trust-avatar a2"><span class="trust-inner"><svg class="trust-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8v40.6zm136 163.5c-7.7 10-70 67-174.5 67S34.2 408.5 9.7 379c-6.8-7.7 1-11.3 5.5-8.3C88.5 415.2 203 488.5 387.7 401c7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z"/></svg></span></span>
+            <span class="trust-avatar a3"><span class="trust-inner"><svg class="trust-icon" viewBox="0 0 488 512" aria-hidden="true"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg></span></span>
             <span class="trust-pill">Trusted by 2000+ Enterprises</span>
           </div>
 
@@ -84,31 +96,31 @@
             <span class="line l2">Designed To Evolve</span>
           </h1>
 
-          <p class="subhead anim" style="--d: 0.28s">
+          <p class="subhead anim" style="--d: 0.8s">
             Build applications that reason, adapt and collaborate using a modular
             AI platform designed for production.
           </p>
 
-          <a href="#pricing" class="cta anim" style="--d: 0.4s">Get Started</a>
+          <a href="#pricing" class="cta anim" style="--d: 0.95s">Get Started</a>
         </div>
 
         <div class="stats" aria-label="Platform metrics">
-          <div class="stat anim" style="--d: 0.5s">
+          <div class="stat anim" style="--d: 1.1s">
             <span class="stat-icon" aria-hidden="true">&lt;</span>
             <span class="stat-value" data-target="120" data-suffix="ms" data-decimals="0">0ms</span>
             <span class="stat-label">Inference Time</span>
           </div>
-          <div class="stat anim" style="--d: 0.58s">
+          <div class="stat anim" style="--d: 1.18s">
             <span class="stat-icon" aria-hidden="true">%</span>
             <span class="stat-value" data-target="99.99" data-suffix="%" data-decimals="2">0.00%</span>
             <span class="stat-label">Platform Uptime</span>
           </div>
-          <div class="stat anim" style="--d: 0.66s">
+          <div class="stat anim" style="--d: 1.26s">
             <span class="stat-icon" aria-hidden="true">*</span>
             <span class="stat-value" data-target="24" data-suffix="/7" data-decimals="0">0/7</span>
             <span class="stat-label">Autonomous Runtime</span>
           </div>
-          <div class="stat anim" style="--d: 0.74s">
+          <div class="stat anim" style="--d: 1.34s">
             <span class="stat-icon" aria-hidden="true">#</span>
             <span class="stat-value" data-target="2.4" data-suffix="M" data-decimals="1">0.0M</span>
             <span class="stat-label">Context Windows</span>
